@@ -1,14 +1,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import store from 'Store/';
+import store from 'Store';
 import { Provider } from 'react-redux';
 
-import App from 'Components/App';
+import MahjongGame from 'Components/MahjongGame';
 
 ReactDOM.render(
     (
         <Provider store={store}>
-            <App />
+            <MahjongGame />
         </Provider>
     ),
     document.getElementById('root')

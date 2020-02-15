@@ -1,24 +1,44 @@
 export enum MahjongActions {
-    ADD_ITEM,
-    REMOVE_ITEM
+    INITIALIZE_CARDS,
+    SET_CARD_STATUS,
+    SET_PREVIOUSLY_CLICKED_CARD,
+    EMPTY_PREVIOUSLY_CLICKED_CARD_IDS
 };
 
-export interface MahjongItem {
-    id: number,
-    name: string
+export enum MahjongCardStatus {
+    HIDDEN,
+    REVEALED,
+    GUESSED
+};
+
+export interface MahjongCard {
+    value: number,
+    status: MahjongCardStatus
 };
 
 export interface MahjongAction {
     type: MahjongActions,
-    item: MahjongItem
+    data: any
 }
 
-export const addItem = (item: MahjongItem): MahjongAction => ({
-    type: MahjongActions.ADD_ITEM,
-    item
+export const initializeCards = (cards: MahjongCard[]): MahjongAction => ({
+    type: MahjongActions.INITIALIZE_CARDS,
+    data: cards
 });
 
-export const removeItem = (item: MahjongItem): MahjongAction => ({
-    type: MahjongActions.REMOVE_ITEM,
-    item
+export const setCardStatus = (cardStatus: MahjongCardStatus, cardId: number): MahjongAction => ({
+    type: MahjongActions.SET_CARD_STATUS,
+    data: {
+        cardStatus,
+        cardId
+    }
+});
+
+export const setPreviouslyClickedCardId = (cardId: number): MahjongAction => ({
+    type: MahjongActions.SET_PREVIOUSLY_CLICKED_CARD,
+    data: cardId
+});
+
+export const emptyPreviouslyClickedCardIds = () => ({
+    type: MahjongActions.EMPTY_PREVIOUSLY_CLICKED_CARD_IDS
 });

@@ -1,0 +1,29 @@
+:root {
+    --mahjong-game-background-color: white;
+}
+
+.MahjongGame {
+    background-color: var(--mahjong-game-background-color);
+    border-radius: 20px;
+
+    &__Button {
+        display: block;
+        margin: auto;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        border-width: 0;
+        padding: 10px;
+        cursor: pointer;
+
+        &_hasWon {
+            background-color: green;
+        }
+    }
+
+    &__BoardWrapper {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 10px;
+    }
+}
