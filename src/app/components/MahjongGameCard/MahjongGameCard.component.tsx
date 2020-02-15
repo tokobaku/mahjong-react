@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { MahjongCard, MahjongCardStatus } from '../../store/Mahjong/index';
+import { MahjongCard, MahjongCardStatus } from 'Store/Mahjong';
 
 import './MahjongGameCard.style';
 

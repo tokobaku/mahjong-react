@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { MahjongCard } from '../../store/Mahjong/index';
-import MahjongGameCard from '../MahjongGameCard/index';
+import { MahjongCard } from 'Store/Mahjong';
+import MahjongGameCard from '../MahjongGameCard';
 
 import './MahjongGame.style';
 

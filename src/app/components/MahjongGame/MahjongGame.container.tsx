@@ -8,7 +8,7 @@ import {
     setPreviouslyClickedCardId as storeSetPreviouslyClickedCardId,
     setCardStatus as storeSetCardStatus,
     emptyPreviouslyClickedCardIds as storeEmptyPreviouslyClickedCardIds
-} from '../../store/Mahjong/index';
+} from 'Store/Mahjong';
 
 export const mapStateToProps = (state: any) => ({
     cards: state.MahjongReducer.cards,
