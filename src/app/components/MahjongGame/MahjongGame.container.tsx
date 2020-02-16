@@ -140,15 +140,8 @@ export class MahjongGameContainer extends React.Component<MahjongGameContainerPr
 
     private hasWon() {
         const { cards } = this.props;
-        let notGuessedCount = 0;
 
-        cards.forEach(card => {
-            if (card.status !== MahjongCardStatus.GUESSED) {
-                notGuessedCount++;
-            }
-        });
-
-        return cards.length > 2 && notGuessedCount <= 2;
+        return cards.length && !cards.some(card => card.status !== MahjongCardStatus.GUESSED);
     }
 
     render() {
